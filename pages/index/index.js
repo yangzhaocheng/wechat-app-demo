@@ -7,6 +7,7 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
+    posts: [{ "categoryId": 1875, "characteristic": "享受vip尊享服务，使用专业版后台，功能更强，体验更好", "commission": 0.00, "commissionType": 0, "dateAdd": "2019-03-19 09:51:08", "dateUpdate": "2019-10-03 23:24:36", "gotScore": 0, "gotScoreType": 0, "id": 124305, "kanjia": true, "kanjiaPrice": 49.00, "limitation": false, "logisticsId": 0, "miaosha": false, "minPrice": 198.00, "minScore": 0, "name": "api工厂1年vip会员", "numberFav": 0, "numberGoodReputation": 1, "numberOrders": 1, "numberSells": 1, "originalPrice": 198.00, "paixu": 0, "pic": "https://cdn.it120.cc/apifactory/2019/03/19/6828c1ced4a74e11b532c8cbd864245a.png", "pingtuan": false, "pingtuanPrice": 0.00, "recommendStatus": 1, "recommendStatusStr": "推荐", "shopId": 0, "status": 0, "statusStr": "上架", "stores": 9999998, "userId": 951, "vetStatus": 1, "views": 19104, "weight": 0.00 }],
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   //事件处理函数

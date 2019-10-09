@@ -1,34 +1,23 @@
-/**index.wxss**/
-.userinfo {
+.container {
+  background-color: #fff;
+  padding: 0 0;
+  min-height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  box-sizing: border-box;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
 
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 200px;
-}
-
-.goods-container{
+.posts-container{
   display: flex;
-  justify-content: space-between;  
+  justify-content: space-between;
   flex-wrap:wrap;
   box-sizing: content-box;
   padding: 24rpx;
   background-color: #F2f2f2;
 }
-.goods-box{
+
+.posts-box{
   width: 339rpx;
   height: 472rpx;
   background-color: #fff;
@@ -36,16 +25,18 @@
   margin-bottom: 24rpx;
   border-radius:5px;
 }
-.goods-box .img-box{
+
+.posts-box .post-box{
   width: 339rpx;
   height: 339rpx;
   overflow: hidden;
 }
-.goods-box .img-box image{
+
+.posts-box .post-box image{
    width: 339rpx;
    height: 339rpx;
 }
-.goods-box .goods-title{
+.post-title .post-title{
   width: 280rpx;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -55,7 +46,8 @@
   color:#000;
   margin-left: 24rpx;
 }
-.goods-box .goods-price{
+
+.posts-box .post-price{
   width: 280rpx;
   overflow: hidden;
   font-size: 24rpx;
@@ -63,3 +55,29 @@
   color:#e64340;
   margin-left: 24rpx;
 }
+
+
+.coupons-float {
+  position: fixed;
+  right:15rpx;
+  bottom:80rpx;
+  width:80rpx;
+  height:80rpx;
+  background-color: #fff;
+  text-align: center;
+  border-radius:50%;
+  border: 1rpx solid #ddd;
+}
+.coupons-float image {
+  width:60rpx;
+  height:60rpx;
+  margin-top: 10rpx;
+}
+
+.no-more-posts{
+  text-align: center;
+  font-size: 24rpx;
+  padding-bottom:48rpx;
+  color: #999;
+}
+

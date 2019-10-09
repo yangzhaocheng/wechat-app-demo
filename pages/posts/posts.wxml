@@ -1,0 +1,26 @@
+<view class="container">
+
+    <view>
+        <!-- <view class='space'></view> -->
+        <view class="posts-container">
+            <view class="posts-box" wx:for-items="{{posts}}" wx:key="{{index}}" bindtap="toDetailsTap"
+                  data-id="{{item.id}}">
+                <view class="post-box">
+                    <image src="{{item.pic}}_m" class="image" mode="aspectFill" lazy-load="true"/>
+                </view>
+                <view class="post-title">{{item.name}}</view>
+                <view style='display:flex;'>
+                    <view class="post-price">¥ {{item.minPrice}}</view>
+                    <view wx:if="{{item.originalPrice && item.originalPrice > 0}}" class="post-price"
+                          style='color:#aaa;text-decoration:line-through'>¥ {{item.originalPrice}}
+                    </view>
+                </view>
+            </view>
+        </view>
+        <view hidden="{{loadingMoreHidden ? true : false}}" class="no-more-posts">没有更多啦</view>
+    </view>
+
+</view>
+<view class='coupons-float' bindtap="goCoupons">
+    <image src="/images/gift.png"></image>
+</view>

@@ -1,0 +1,108 @@
+/* pages/test/index.wxss */
+@font-face {font-family: "iconfont";
+  src: url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAMMAAsAAAAABygAAAK/AAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCfgqCDIIMATYCJAMMCwgABCAFhG0HQxtXBhEVlBtkPxJs3OJiZX3TRZXQIr0Jolr7t2d3PwAqRrAYUECawX+ViooCQPUqGvgaIIAA7+V0DBejXqgsxfV861k+45OO+X3WeZxGKYRESIw4nDbF5wPlsuawOh8TMMGAxtoUWenExLxleK1L6aA2QwBnwiWQiqqGDhwxkF4CyMLs9CiOOT2mJVNwRLCvmWiQo9jhqPapu8CR8PHylbQcQWGnIQNbpionKLHdsd3Vu6xdDPgEBPNZAXUaaCABGJCuWnsLOo4n0DjbcUME9tVKwHbXsrDd8fm7/cMDQYHYQ9JdAYgBmbojAZdzawKYggJAA2AfJxuAbUz1HSio4ODA0auxufnX4190v2BPeFqef+54/rFjV9izZ53PagfMvfjSGRv/4lPnrtCnTztopKHpeddzfMipa2k7qw4OqzutZfVNHd2rN/za7yU6fU7Ye/E0vKOEfU5vE2/6t6/e6Oiub6JbA2fleNt+4egxrbnGfiEdEH3Ft2H+fGtHXUNz6eHDwAk5mJOf69twhREArP36vV7HvxBA4HHB2r9hj4Jvji4GgFdub34jn7Xf0N+I4805BH60oGeZcUTEoI3F53zPqUkbaVUAXM2FBXF7ez9e6dc7HQRH/FIoHAiDxpEIoqEmwA4XMmCPI8XQOotXTXfhg+zJnIA4bwTh6QPF3S1onr5EQ/3Bjr8/7Hm2h7OufBZ0EVUjygkdYwT/giZMY2ImFlHmEfOtd5QVhbQr0tqEwEhdTFU4Is0xZL1ny5wg0TRAibbDvp9gpqnFwLJmngulUt2NZJiGjVCOIIehCHgvoBFMRsmvzUTp/kcou+k51JLVZr9CZNXUDwxJ9yBW8rFX1r1cs7rLLMYSkJDJAJSoHer1JmCub9dCAZPqEdFZQdFqqa9crq8cPiBPzYN8VadEi8HlzVijI7YHndrMZgMA') format('woff2'),
+  url('//at.alicdn.com/t/font_1209810_s2iq0eomwkc.woff?t=1558690554699') format('woff'),
+  url('//at.alicdn.com/t/font_1209810_s2iq0eomwkc.ttf?t=1558690554699') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('//at.alicdn.com/t/font_1209810_s2iq0eomwkc.svg?t=1558690554699#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont {
+  font-family: "iconfont" !important;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-xinheart280:before {
+  content: "\e9cb";
+}
+.icon-xinheart281:before {
+  content: "\e9cc";
+}
+
+
+
+page {
+  height: 100%;
+  font-size: 26rpx;
+  line-height: 1.5;
+}
+image{ vertical-align: middle;}
+
+
+
+.nav_box{ width: 100%;}
+.nav_box.nav_body_top{ overflow: hidden; position: fixed; left: 0; top: 0; z-index: 999;}
+
+.nav_body{ width: auto; padding: 22rpx 0; border-bottom: #ddd solid 1px; background-color: #fff; position: relative;
+			display: flex; justify-content: flex-start; align-items: center;
+}
+.nav_body:after{ content: ""; width: 124rpx; height: 1.5px; background-color: #fc2549; position: absolute; left: ; bottom: 0;
+				-webkit-transition:all linear .3s;
+						transition:all linear .3s;
+}
+.nav_li{ width: 150rpx; height: 52rpx; line-height: 52rpx; text-align: center; color: #000; font-size: 26rpx; position: relative;
+				-webkit-transition:all linear .3s;
+						transition:all linear .3s;
+}
+.nav_li:not(:first-child):after{ content: ""; width: 1px; height: 100%; background-color: #ddd; position: absolute; left: 0; top: 0;}
+
+.nav_body.nav_body_cur0 .nav_li:nth-child(1) ,
+.nav_body.nav_body_cur1 .nav_li:nth-child(2) ,
+.nav_body.nav_body_cur2 .nav_li:nth-child(3) ,
+.nav_body.nav_body_cur3 .nav_li:nth-child(4) ,
+.nav_body.nav_body_cur4 .nav_li:nth-child(5) ,
+.nav_body.nav_body_cur5 .nav_li:nth-child(6) ,
+.nav_body.nav_body_cur6 .nav_li:nth-child(7) ,
+.nav_body.nav_body_cur7 .nav_li:nth-child(8) ,
+.nav_body.nav_body_cur8 .nav_li:nth-child(9) ,
+.nav_body.nav_body_cur9 .nav_li:nth-child(10){ color: #fc2549; font-weight: bold;}
+.nav_body.nav_body_cur0:after{ left: calc((150rpx - 124rpx) / 2);}
+.nav_body.nav_body_cur1:after{ left: calc(150rpx + (150rpx - 124rpx) / 2);}
+.nav_body.nav_body_cur2:after{ left: calc(150rpx * 2 + (150rpx - 124rpx) / 2);}
+.nav_body.nav_body_cur3:after{ left: calc(150rpx * 3 + (150rpx - 124rpx) / 2);}
+.nav_body.nav_body_cur4:after{ left: calc(150rpx * 4 + (150rpx - 124rpx) / 2);}
+.nav_body.nav_body_cur5:after{ left: calc(150rpx * 5 + (150rpx - 124rpx) / 2);}
+.nav_body.nav_body_cur6:after{ left: calc(150rpx * 6 + (150rpx - 124rpx) / 2);}
+.nav_body.nav_body_cur7:after{ left: calc(150rpx * 7 + (150rpx - 124rpx) / 2);}
+.nav_body.nav_body_cur8:after{ left: calc(150rpx * 8 + (150rpx - 124rpx) / 2);}
+.nav_body.nav_body_cur9:after{ left: calc(150rpx * 9 + (150rpx - 124rpx) / 2);}
+.nav_body.nav_body_cur10:after{ left: calc(150rpx * 10 + (150rpx - 124rpx) / 2);}
+
+
+
+.showNoMore{ padding: 20rpx 0; text-align: center; color: #aaa;}
+.showNoMore:before{ content: ""; display: inline-block; vertical-align: middle; width: 150rpx; height: 1px; margin: 0 15rpx; background-color: #ddd;}
+.showNoMore:after{ content: ""; display: inline-block; vertical-align: middle; width: 150rpx; height: 1px; margin: 0 15rpx; background-color: #ddd;}
+
+
+
+.body{ height: 100%; background-color: #f4f8fb;}
+
+.swiper{ padding: 0 20rpx; background-color: #fff;}
+swiper{ height: 350rpx; margin: 0 auto; overflow: hidden;}
+swiper image{ width: 100%;}
+
+/* 列表 */
+.get_pubu_img{ display: none;}
+
+.box{ margin-top: 20rpx; display: flex; flex-wrap: wrap; flex-direction: row; justify-content:flex-start; align-items: flex-start; position: relative;}
+
+.no_data_show{ width: 100%; min-height: calc(100vh - 500rpx); margin: 0 auto; text-align: center; font-size: 36rpx; font-weight: bold; background-color: #fff; display: flex; justify-content: center; align-items: center;}
+
+.box_l , .box_r{ width: 345rpx; margin-left: 20rpx;}
+
+.list{ width:100%; margin-bottom: 20rpx; padding-bottom: 10rpx; border-radius: 10rpx; background-color: #fff; position: relative; overflow: hidden;
+    -webkit-box-shadow: 2rpx 5rpx 10rpx rgba(0,0,0,.1);
+            box-shadow: 2rpx 5rpx 10rpx rgba(0,0,0,.1);
+}
+.list > image{ width: 100%;/* border-top-left-radius: 10rpx; border-top-right-radius: 10rpx;*/}
+.list_title{ height: 64rpx; line-height: 64rpx; padding: 0 20rpx; color: #4c4c4c; overflow: hidden; white-space:nowrap; text-overflow: ellipsis;}
+.list_user{ height: 70rpx; padding: 0 20rpx; color: #989898;
+          display: flex; flex-wrap: nowrap; justify-content: flex-start; align-items: center;
+}
+.list_user image{ width: 50rpx; margin-right: 10rpx; border-radius: 50%;}
+.list_user_name{ width: 150rpx; margin-right: 10rpx; overflow: hidden; white-space:nowrap; text-overflow: ellipsis;}
+
+.list_zan{ display: inline-block; vertical-align: middle; width: 30rpx; height: 30rpx; margin-right: 10rpx; position: relative; top: -4rpx;}
+.list_zan .iconfont{ width: 30rpx; height: 3rpx; position: absolute; left: 0; top: 0;}
+
+

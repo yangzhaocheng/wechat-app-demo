@@ -1,0 +1,104 @@
+<!--pages/test/index.wxml-->
+<scroll-view class="body" scroll-y="{{ifCanScroll}}" bindscrolltolower="scrollEnd" bindscroll="scrollIn">
+
+    <!--KV图切换-->
+    <view id='top' class='swiper'>
+        <!-- <swiper indicator-color='{{indicatorcolor}}' indicator-active-color='{{indicatoractivecolor}}'
+                indicator-dots="{{indicatordots}}" autoplay="{{autoplay}}" interval="{{interval}}"
+                duration="{{duration}}">
+            <block wx:for="{{swiperImgArr}}">
+                <swiper-item>
+
+                    <navigator wx:if="{{item.linkUrl != ''}}" url="{{item.linkUrl}}" open-type="navigate">
+                        <image mode='widthFix' src="{{item.src}}"/>
+                    </navigator>
+
+                    <image wx:else mode='widthFix' src="{{item.src}}"/>
+
+                </swiper-item>
+            </block>
+        </swiper> -->
+    </view>
+
+
+    <!--选择切换菜单  与以下  分开写避免了导航固定时页面跳动-->
+    <scroll-view scroll-x scroll-with-animation="true" scroll-left="{{ navIndex * 150 - 375 + 150 / 2 }}rpx"
+                 class="nav_box">
+        <view class="nav_body nav_body_cur{{navIndex}}" style="width: calc(150rpx * {{navList.length}});">
+            <view class='nav_li' wx:for="{{navList}}" data-type='{{index}}' bindtap='changeTitle'>{{item}}</view>
+        </view>
+    </scroll-view>
+    <!--浮动在顶部的选择切换菜单  与以上  分开写避免了导航固定时页面跳动-->
+    <scroll-view scroll-x scroll-with-animation="true" scroll-left="{{ navIndex * 150 - 375 + 150 / 2 }}rpx"
+                 class="nav_box nav_body_top" style="height: {{ifShowTopNav ? 'auto' : 0}};">
+        <view class="nav_body nav_body_cur{{navIndex}}" style="width: calc(150rpx * {{navList.length}});">
+            <view class='nav_li' wx:for="{{navList}}" data-type='{{index}}' bindtap='changeTitle'>{{item}}</view>
+        </view>
+    </scroll-view>
+
+
+    <!--瀑布流所需，图片显示前用来获取图片等宽时的高度-->
+    <view class='get_pubu_img'>
+        <image wx:for="{{pubuliuNewArrData}}" mode='widthFix' data-key='{{index}}' bindload='pubuImgLoad'
+               src="{{item.src}}"/>
+    </view>
+
+
+    <!--瀑布流显示-->
+    <view class="box" style='{{moveLeft}}' bindtouchstart='touchStart' bindtouchmove='touchMove'
+          bindtouchend='touchEnd'>
+
+        <view wx:if="{{!pubuliuResultsList.listL[0]}}" class="no_data_show">暂无数据</view>
+
+        <!--瀑布流左边数据-->
+        <view class='box_l'>
+            <navigator wx:for="{{pubuliuResultsList.listL}}" class="list" url="{{item.linkUrl}}" open-type="navigate"
+                       hover-class="none">
+                <image mode='widthFix' src="{{item.src}}"/>
+                <view class='list_title'>{{item.title}}</view>
+                <view class='list_user f_24'>
+                    <image src='{{item.userhead}}' mode='widthFix'></image>
+                    <text class='list_user_name'>{{item.nickname}}</text>
+
+                    <text class='list_zan' data-id='{{item.id}}' data-ifzan='{{item.ifzan}}' data-index='{{index}}'
+                          data-side='listL' catchtap='dianzan'>
+                        <text wx:if="{{item.ifzan}}" class='iconfont icon-xinheart280 f_30'></text>
+                        <text wx:esle class='iconfont icon-xinheart281 f_30'></text>
+                    </text>
+
+                    <text>{{item.zannum}}</text>
+                </view>
+                <text>{{item.key}}</text>
+            </navigator>
+        </view>
+
+        <!--瀑布流右边数据-->
+        <view class='box_r'>
+            <navigator wx:for="{{pubuliuResultsList.listR}}" class="list" url="{{item.linkUrl}}" open-type="navigate"
+                       hover-class="none">
+                <image mode='widthFix' src="{{item.src}}"/>
+                <view class='list_title'>{{item.title}}</view>
+                <view class='list_user f_24'>
+                    <image src='{{item.userhead}}' mode='widthFix'></image>
+                    <text class='list_user_name'>{{item.nickname}}</text>
+
+                    <text class='list_zan' data-id='{{item.id}}' data-ifzan='{{item.ifzan}}' data-index='{{index}}'
+                          data-side='listR' catchtap='dianzan'>
+                        <text wx:if="{{item.ifzan}}" class='iconfont icon-xinheart280 f_30'></text>
+                        <text wx:esle class='iconfont icon-xinheart281 f_30'></text>
+                    </text>
+
+                    <text>{{item.zannum}}</text>
+                </view>
+                <text>{{item.key}}</text>
+            </navigator>
+        </view>
+
+    </view>
+
+
+    <view wx:if="{{!ifHaveMore && pubuliuResultsList.listL[0]}}" class='showNoMore'>我是有底线哒</view>
+
+
+</scroll-view>
+

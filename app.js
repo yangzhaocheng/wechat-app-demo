@@ -35,5 +35,57 @@ App({
   },
   globalData: {
     userInfo: null
+  },
+
+
+
+
+  //处理下页列表数据，追加至列表数据存储变量中
+  addList(oldData, newData) {
+    for (var item in newData) {
+      oldData.push(newData[item]);
+    }
+    return oldData;
+  },
+
+  //处理设置最新获取到的瀑布流数据
+  setCurNewPubuImgData: function (oldImgDataJson) {
+    let oldImgData = [];
+    for (var item in oldImgDataJson) {
+      oldImgData[item] = oldImgDataJson[item];
+    }
+    return oldImgData;
+  },
+  //处理存储瀑布流左右两边数据
+  setCurResultsPubuImgData(newImgData, oldData, leftH, rightH, callback) {
+    //let leftH = 0;
+    //let rightH = 0;
+
+    let resultsList = {
+      listL: [],
+      listR: [],
+    }
+
+    let leftStart = 0;
+    let rightStart = 0;
+
+    for (var item in newImgData) {
+      //console.log(leftH, rightH, newImgData[item].h);
+      //console.log(leftH <= rightH);
+      if (leftH <= rightH) {
+        resultsList.listL[leftStart] = oldData[item];
+        leftStart++;
+        leftH += newImgData[item].h;
+      } else {
+        resultsList.listR[rightStart] = oldData[item];
+        rightStart++;
+        rightH += newImgData[item].h;
+      }
+    }
+    callback(resultsList, leftH, rightH);
   }
+
+
+
+
 })
